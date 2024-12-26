@@ -1,0 +1,32 @@
+package demo;
+
+import io.restassured.RestAssured;
+import static io.restassured.RestAssured.given;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import org.testng.Assert;
+
+import io.restassured.path.json.JsonPath;
+import pojo.UserDetail;
+
+public class EcomDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		UserDetail ud = new UserDetail();
+		
+		ud.setUn("m@m.com");
+		ud.setPwd("R@dha123");
+		RestAssured.baseURI= "https://rahulshettyacademy.com/";
+		
+		String token = given().log().all().header("Content-Type","application/json").body(ud).log().all().post("api/ecom/auth/login").then().assertThat().statusCode(200).extract().asString();
+		
+		System.out.println(token);
+		
+	}
+
+}

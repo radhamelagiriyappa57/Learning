@@ -1,0 +1,13 @@
+Feature: Test CreateAccount
+
+
+
+Background: User is logged in
+   
+    
+@smoke
+Scenario: Create Account
+Given User is in MYL
+  	When User fills data <driver>
+    And click create button
+    Then user is on Finish My Account Page

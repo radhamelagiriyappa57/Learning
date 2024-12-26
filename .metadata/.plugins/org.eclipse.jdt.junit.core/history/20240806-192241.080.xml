@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="runnerlogin" project="Myliaison" tests="2" started="2" failures="0" errors="1" ignored="0">
+  <testsuite name="stepDefinitions.runnerlogin" time="58.66">
+    <testsuite name="Test Login" time="58.66">
+      <testcase name="Check login is successful with valid credentials" classname="Test Login" time="14.186"/>
+      <testcase name="Save Biographic" classname="Test Login" time="44.474">
+        <error>org.openqa.selenium.NoSuchElementException: Unable to find element with locator By.xpath: //*[@id="footer"]/button
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.1'
+Driver info: driver.version: RemoteWebDriver&#13;
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:168)&#13;
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)&#13;
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)&#13;
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)&#13;
+	at stepDefinitions.loginSteps.click_about_me(loginSteps.java:105)&#13;
+	at ✽.click profile(file:///C:/Users/rmelagir/eclipse-workspace/Myliaison/src/main/resources/Features/login.feature:21)&#13;
+&#13;
+</error>
+      </testcase>
+    </testsuite>
+  </testsuite>
+</testrun>

@@ -1,0 +1,26 @@
+package pojo;
+
+public class OrderDetail {
+	
+	private String country;
+	
+	public String getcountry() {
+		return country;
+	}
+
+	public void setcountry(String country) {
+		this.country = country;
+	}
+
+	public String getproductOrderedId() {
+		return productOrderedId;
+	}
+
+	public void setproductOrderedId(String productOrderedId) {
+		this.productOrderedId = productOrderedId;
+	}
+
+	private String productOrderedId;
+	
+	
+}

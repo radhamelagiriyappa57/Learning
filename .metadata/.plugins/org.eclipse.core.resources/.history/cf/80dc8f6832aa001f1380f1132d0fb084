@@ -1,0 +1,26 @@
+
+Feature: Application Login
+  I want to use this template for my feature file
+
+  @Test
+  Scenario: Admin Page login
+    Given User is on landing page
+    When User login to applciation with "un" and "pwd"
+    Then Home page displayed
+    And cards are displayed
+
+    Scenario: Admin Page login
+    Given User is on landing page
+    When User login to applciation with "un1" and "pwd2"
+    Then Home page displayed
+    And cards are displayed
+    
+    
+  Scenario Outline: Admin Page login
+    Given User is on landing page
+    When User login to applciation with "<un>" and "<pwd>"
+    Examples :
+    |user1|password|
+    |user2|password|
+    Then Home page displayed
+    And cards are displayed

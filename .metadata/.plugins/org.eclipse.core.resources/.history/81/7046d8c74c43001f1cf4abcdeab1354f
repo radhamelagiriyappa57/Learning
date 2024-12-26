@@ -1,0 +1,13 @@
+package Day1;
+
+public class greetingsMain {
+	
+	
+	
+	public static void main(String[] args) {
+		
+	greetings g = new greetings();
+	g.m1();
+
+}
+}

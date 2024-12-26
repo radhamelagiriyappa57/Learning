@@ -1,0 +1,24 @@
+package pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+public class loginpage {
+	
+		
+	
+	@FindBy(name = "user_session[login]")
+	 private static WebElement UserNameButton;
+ 
+	 public WebElement getUserNameButton() {
+       return UserNameButton;
+	 }
+
+		@FindBy(name = "user_session[login]")
+		 private static WebElement PasswordButton;
+	 
+		 public WebElement PasswordButton() {
+	       return UserNameButton;
+		 }
+}

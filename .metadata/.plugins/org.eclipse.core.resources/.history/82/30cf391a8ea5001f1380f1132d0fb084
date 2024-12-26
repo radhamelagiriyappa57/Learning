@@ -1,0 +1,26 @@
+package demo;
+
+import io.restassured.RestAssured;
+import static io.restassured.RestAssured.given;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import org.testng.Assert;
+
+import io.restassured.path.json.JsonPath;
+
+public class EcomDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		RestAssured.baseURI= "https://rahulshettyacademy.com";
+		
+		String token = given().header("Content-Type","application/json").formParam("userEmail", "m@m.com").formParam("userPassword", "R@dha123").when().log().all().get("api/ecom/auth/login").then().assertThat().statusCode(201).extract().asString();
+		
+		System.out.println(token);
+		
+	}
+
+}

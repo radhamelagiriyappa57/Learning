@@ -1,0 +1,36 @@
+package response;
+
+import java.util.List;
+
+public class courses {
+	
+private List <webautomation> WebAutomation;
+
+public List <webautomation> getWebAutomation() {
+	return WebAutomation;
+}
+public void setWebAutomation(List<webautomation> webAutomation) {
+	this.WebAutomation = webAutomation;
+}
+private List <api> api;
+private List <mobile> mobile;
+
+public List<api> getApi() {
+	return api;
+}
+public void setApi(List<api> api) {
+	this.api = api;
+}
+public List<mobile> getMobile() {
+	return mobile;
+}
+public void setMobile(List<mobile> mobile) {
+	this.mobile = mobile;
+}
+
+
+
+}
+
+
+

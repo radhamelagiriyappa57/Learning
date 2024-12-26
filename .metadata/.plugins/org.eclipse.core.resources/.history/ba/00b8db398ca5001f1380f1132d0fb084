@@ -1,0 +1,10 @@
+package demo;
+
+import io.restassured.RestAssured;
+
+public class EcomDemo {
+
+	RestAssured.baseURI= "https://rahulshettyacademy.com";
+	
+	
+}

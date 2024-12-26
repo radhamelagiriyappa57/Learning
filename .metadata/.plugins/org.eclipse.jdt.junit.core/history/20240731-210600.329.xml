@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="runnerlogin" project="Myliaison" tests="1" started="1" failures="0" errors="1" ignored="0">
+  <testsuite name="stepDefinitions.runnerlogin" time="39.993">
+    <testsuite name="Test CreateAccount" time="39.993">
+      <testcase name="Create Account" classname="Test CreateAccount" time="39.993">
+        <error>java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.close()" because "stepDefinitions.loginSteps.driver" is null&#13;
+	at stepDefinitions.loginSteps.after(loginSteps.java:62)&#13;
+&#13;
+</error>
+      </testcase>
+    </testsuite>
+  </testsuite>
+</testrun>

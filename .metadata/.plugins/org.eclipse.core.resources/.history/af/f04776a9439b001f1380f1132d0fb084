@@ -1,0 +1,19 @@
+package Training;
+
+import static io.restassured.RestAssured.given;
+
+import io.restassured.RestAssured;
+
+public class Learning {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+//Add API
+		
+		RestAssured.baseURI="https://rahulshettyacademy.com";
+		given().log().all().queryParam("key", "qaclick123").header("Content-Type", "application/json").body("").when().post("maps/api/place/add/json")
+		.then().log().all().assertThat().statusCode(200);
+		
+	}
+
+}

@@ -1,0 +1,47 @@
+package stepDefinitions;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+import commonfunctions.LoadProperties;
+import commonfunctions.utilities;
+import io.cucumber.java.en.When;
+import pages.loginpage;
+
+public class createaccount {
+	loginpage loginpg;
+	static LoadProperties lp = new LoadProperties();
+	
+	WebDriver driver;
+	@When("User fills data")
+	public void user_fills_data() {
+		
+			driver= utilities.login(null, lp.getProperty("qaurl"));
+		 	driver.findElement(By.linkText("Login")).click();
+		    driver.findElement(By.id("signUpUrl")).click();
+		    driver.findElement(By.id("email")).click();
+		    driver.findElement(By.id("email")).clear();
+		    driver.findElement(By.id("email")).sendKeys("myl.qa122r1@mailinator.com");
+		    driver.findElement(By.id("password")).click();
+		    driver.findElement(By.id("password")).clear();
+		    driver.findElement(By.id("password")).sendKeys("Test!@#123");
+		    driver.findElement(By.id("password-confirm")).click();
+		    driver.findElement(By.id("password-confirm")).clear();
+		    driver.findElement(By.id("password-confirm")).sendKeys("Test!@#123");		   
+		    driver.findElement(By.cssSelector(".kc-login-button")).click();
+		  
+	}
+
+	@And("click create button")
+	public void click_create_button() {
+	    // Write code here that turns the phrase above into concrete actions
+			driver.findElement(By.id("terms")).click();
+		    driver.findElement(By.name("gdpr")).click();
+		    driver.findElement(By.id("termsofuse")).click();
+		    driver.findElement(By.id("kc-accept")).click();
+	}
+
+	
+	
+	
+}

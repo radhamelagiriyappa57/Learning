@@ -1,0 +1,110 @@
+package stepDefinitions;
+
+import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+public class mainSteps {
+	
+	WebDriver driver;
+
+@Given("Delete cookies")
+public void delete_cookies() {
+    // Write code here that turns the phrase above into concrete actions
+	System.out.println("________________________");
+	
+	System.out.println("background step");
+}
+	@Given("User is on landing page")
+	public void user_is_on_landing_page() {
+	    // Write code here that turns the phrase above into concrete actions
+		driver = new ChromeDriver();
+		driver.get("https://rahulshettyacademy.com/seleniumPractise/#/");
+		System.out.println("User is on landing page");
+	}
+	
+	@Then("Home page displayed")
+	public void home_page_displayed() {
+	    // Write code here that turns the phrase above into concrete actions
+		 driver.manage().window().setSize(new Dimension(1050, 700));
+		    driver.findElement(By.cssSelector(".search-keyword")).click();
+		    driver.findElement(By.cssSelector(".search-keyword")).sendKeys("broco");
+		    driver.findElement(By.cssSelector(".search-button")).click();
+		    {
+		      List<WebElement> elements = driver.findElements(By.cssSelector(".product-image > img"));
+		      assert(elements.size() > 0);
+		    }
+		System.out.println("Home page displayed");
+	}
+	@Then("cards are displayed")
+	public void cards_are_displayed() {
+	    // Write code here that turns the phrase above into concrete actions
+		
+		
+		    driver.findElement(By.linkText("Top Deals")).click();
+		   Set <String> s1 = driver.getWindowHandles();
+		   Iterator <String>i1= s1.iterator();
+		   String parent = i1.next();
+		   String child = i1.next();
+		   driver.switchTo().window(child);
+		    driver.findElement(By.id("search-field")).click();
+		    driver.findElement(By.id("search-field")).sendKeys("wheat");
+		    driver.findElement(By.cssSelector("td:nth-child(1)")).click();
+		    //assertThat(driver.findElement(By.cssSelector("td:nth-child(1)")).getText(), is("Wheat"));
+		System.out.println("cards are displayed");
+	}
+	@When("^User login to applciation with (.+) and (.+)$")
+	public void user_login_to_applciation_with_and(String string, String string2) {
+	    // Write code here that turns the phrase above into concrete actions
+		System.out.println(string);
+		System.out.println(string2);
+	}
+	
+	
+	/*@When("User login to applciation with {string} and {string}")
+	public void user_login_to_applciation_with_and(String string, String string2) {
+	    // Write code here that turns the phrase above into concrete actions
+		System.out.println(string);
+		System.out.println(string2);
+	}
+
+*/
+	/*@When("User login to applciation")
+	public void user_login_to_applciation() {
+	    // Write code here that turns the phrase above into concrete actions
+		System.out.println("User is on landing page");
+	}*/
+	
+	
+	@Given("User is pratice landing page")
+	public void user_is_pratice_landing_page() {
+	    // Write code here that turns the phrase above into concrete actions
+		System.out.println("User is on practice landing page");
+	}
+	@When("sign up details")
+	public void sign_up_details(List <String> data) {
+	    // Write code here that turns the phrase above into concrete actions
+	    // For automatic transformation, change DataTable to one of
+	    // E, List<E>, List<List<E>>, List<Map<K,V>>, Map<K,V> or
+	    // Map<K, List<V>>. E,K,V must be a String, Integer, Float,
+	    // Double, Byte, Short, Long, BigInteger or BigDecimal.
+	    //
+	    // For other transformations you can register a DataTableType.
+		System.out.println(data.get(0));
+		System.out.println(data.get(1));
+		System.out.println(data.get(2));
+		System.out.println(data.get(3));
+		
+	}
+
+}

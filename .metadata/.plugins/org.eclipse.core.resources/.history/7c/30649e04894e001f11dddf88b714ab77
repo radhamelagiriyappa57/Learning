@@ -1,0 +1,14 @@
+Feature: Test Login
+@smoketests
+  Scenario Outline: 
+    Check login is successful with valid credentials
+
+    Given User is on login page
+    When enter <username> and <pwd>
+    And click login button
+    Then user is on dashboard page
+
+    Examples: 
+      | username               | password   |
+      | myl.qa@mailinator.com  | Test!@#123 |
+      | myl.qa2@mailinator.com | Test!@#123 |

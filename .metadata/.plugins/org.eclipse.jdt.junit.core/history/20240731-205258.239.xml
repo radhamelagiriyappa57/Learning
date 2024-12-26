@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="runnerlogin" project="Myliaison" tests="1" started="1" failures="0" errors="2" ignored="0">
+  <testsuite name="stepDefinitions.runnerlogin" time="9.086">
+    <testsuite name="Test CreateAccount" time="9.086">
+      <testcase name="Create Account" classname="Test CreateAccount" time="9.086">
+        <error>io.cucumber.junit.UndefinedStepException: The step 'User fills data &lt;driver&gt;' is undefined.
+You can implement this step using the snippet(s) below:
+
+@When("User fills data &lt;driver&gt;")
+public void user_fills_data_driver() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+&#13;
+&#13;
+java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.close()" because "this.driver" is null&#13;
+	at stepDefinitions.createaccount.after(createaccount.java:66)&#13;
+&#13;
+</error>
+      </testcase>
+    </testsuite>
+  </testsuite>
+</testrun>

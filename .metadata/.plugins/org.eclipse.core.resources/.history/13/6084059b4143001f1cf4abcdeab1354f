@@ -1,0 +1,15 @@
+package Day1;
+
+public class student {
+	
+	int sid;
+	String sname;
+	char grad;
+	
+	void printdata()
+	{
+	System.out.print(sid+""+sname+""+grad+"");
+		
+	}
+
+}

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="runnerlogin" project="Myliaison" tests="2" started="2" failures="0" errors="2" ignored="0">
+  <testsuite name="stepDefinitions.runnerlogin" time="0.105">
+    <testsuite name="Test Login" time="0.105">
+      <testcase name="#1" classname="Test Login" time="0.1">
+        <error>io.cucumber.java.PendingException: TODO: implement me&#13;
+	at stepDefinitions.loginSteps.user_is_on_login_page(loginSteps.java:12)&#13;
+	at ✽.User is on login page(file:///C:/Users/rmelagir/eclipse-workspace/Myliaison/src/main/resources/Features/login.feature:6)&#13;
+&#13;
+</error>
+      </testcase>
+      <testcase name="#2" classname="Test Login" time="0.004">
+        <error>io.cucumber.java.PendingException: TODO: implement me&#13;
+	at stepDefinitions.loginSteps.user_is_on_login_page(loginSteps.java:12)&#13;
+	at ✽.User is on login page(file:///C:/Users/rmelagir/eclipse-workspace/Myliaison/src/main/resources/Features/login.feature:6)&#13;
+&#13;
+</error>
+      </testcase>
+    </testsuite>
+  </testsuite>
+</testrun>

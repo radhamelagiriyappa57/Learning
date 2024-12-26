@@ -1,0 +1,56 @@
+package demo;
+
+import io.restassured.RestAssured;
+import static io.restassured.RestAssured.given;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import org.testng.Assert;
+
+import io.restassured.path.json.JsonPath;
+import pojo.GetProductDetails;
+import pojo.UserDetail;
+
+public class EcomDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		UserDetail ud = new UserDetail();
+		
+		ud.setUserEmail("m@m.com");
+		ud.setUserPassword("R@dha123");
+		RestAssured.baseURI= "https://rahulshettyacademy.com/";
+		
+		String response = given().log().all().header("Content-Type","application/json").body(ud).log().all().post("api/ecom/auth/login").then().assertThat().statusCode(200).extract().asString();
+		JsonPath js = new JsonPath(response);
+		
+		String tok = js.getString("token");
+		String UserId = js.getString("userId");
+		System.out.println(tok);
+		
+	GetProductDetails gp =	given().log().all().queryParams("access_token", tok)
+			
+			.formParam("productName", "NYKA")
+			.formParam("productAddedBy", UserId)
+			.formParam("productCategory", "fashion")
+			.formParam("productSubCategory", "shirts")
+			.formParam("productPrice", "222")
+			.formParam("productDescription", "NYKA")
+			.formParam("productFor", "Radha")		
+			.multiPart("file",new File("/Users/rahulshetty/Downloads/IMG_0926.jpeg")).log().all()
+			
+			.when().log().all().post("api/ecom/product/add-product").as(GetProductDetails.class);
+	
+	//.header("Authorization", tok)
+	
+	System.out.println(gp.getmessage());
+	System.out.println(gp.getproductId());
+	
+		
+	}
+
+}

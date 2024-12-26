@@ -1,0 +1,47 @@
+package stepDefinitions;
+
+import java.util.Iterator;
+import java.util.Set;
+
+import org.openqa.selenium.By;
+import org.testng.Assert;
+
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import utils.testContextSetup;
+
+public class assertPage {
+	testContextSetup test;
+	public void assertPage(testContextSetup test)
+	{
+		this.test=test;
+		
+	}
+	
+	@Then("cards are displayed")
+	public void cards_are_displayed() {
+	    // Write code here that turns the phrase above into concrete actions
+		
+		
+		    test.driver.findElement(By.linkText("Top Deals")).click();
+		   Set <String> s1 = driver.getWindowHandles();
+		   Iterator <String>i1= s1.iterator();
+		   String parent = i1.next();
+		   String child = i1.next();
+		   test.driver.switchTo().window(child);
+		    test.driver.findElement(By.id("search-field")).click();
+		    test.driver.findElement(By.id("search-field")).sendKeys("wheat");
+		    test.driver.findElement(By.cssSelector("td:nth-child(1)")).click();
+		    //assertThat(driver.findElement(By.cssSelector("td:nth-child(1)")).getText(), is("Wheat"));
+		System.out.println("cards are displayed");
+		Assert.assertEquals(test.s1, test.s2);
+	}
+	@When("^User login to applciation with (.+) and (.+)$")
+	public void user_login_to_applciation_with_and(String string, String string2) {
+	    // Write code here that turns the phrase above into concrete actions
+		System.out.println(string);
+		System.out.println(string2);
+		
+		
+	}
+}

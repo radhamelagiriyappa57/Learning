@@ -1,0 +1,33 @@
+package commonfunctions;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+
+public class utilities {
+	
+	public static WebDriver driver;
+	//static LoadProperties lp = new LoadProperties();
+	 
+	
+	public static WebDriver login(WebDriver driver, String url)
+	{
+		
+		 if (driver == null)
+	        {    
+	        	//System.setProperty(lp.getProperty("driver"), lp.getProperty("chromepath"));	        	
+	        	ChromeOptions handlingSSL = new ChromeOptions();       	 
+	        	handlingSSL.setAcceptInsecureCerts(true);
+	        	driver = new ChromeDriver(handlingSSL);
+	        	driver.manage().window().maximize();
+	     		driver.get(url);
+	     		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);                       
+	        }
+		return driver;
+		
+	}
+
+}

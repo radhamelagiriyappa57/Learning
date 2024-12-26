@@ -1,0 +1,12 @@
+Feature: Test CreateAccount
+
+
+
+
+    
+@smoke
+Scenario: Create Account
+Given User is in MYL
+  	When User fills data
+    And click create button
+    Then user is on Finish My Account Page

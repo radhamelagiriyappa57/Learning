@@ -1,0 +1,14 @@
+package day3;
+
+public class boxmain {
+
+	public static void main(String[] args) {
+		
+		box b = new box();
+		b.volume();
+		// TODO Auto-generated method stub
+		box b2 = new box(10,20,3);
+
+	}
+
+}

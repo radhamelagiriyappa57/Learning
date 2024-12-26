@@ -1,0 +1,73 @@
+package demo;
+
+import io.restassured.RestAssured;
+import io.restassured.builder.RequestSpecBuilder;
+import io.restassured.http.ContentType;
+
+import static io.restassured.RestAssured.given;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import org.apache.http.client.methods.RequestBuilder;
+import org.testng.Assert;
+
+import io.restassured.path.json.JsonPath;
+import io.restassured.specification.RequestSpecification;
+import pojo.GetProductDetails;
+import pojo.UserDetail;
+
+public class EcomDemo {
+
+	public static void main(String[] args) {
+		
+		RequestSpecification req= new RequestSpecBuilder().setBaseUri("https://rahulshettyacademy.com/").setContentType(ContentType.JSON).build();
+		// TODO Auto-generated method stub
+		
+		UserDetail ud = new UserDetail();
+		
+		ud.setUserEmail("m@m.com");
+		ud.setUserPassword("R@dha123");
+		//RestAssured.baseURI= "";
+		
+		String response = given().log().all().spec(req).body(ud).log().all().post("api/ecom/auth/login").then().assertThat().statusCode(200).extract().asString();
+		JsonPath js = new JsonPath(response);
+		
+		String tok = js.getString("token");
+		String UserId = js.getString("userId");
+		System.out.println(tok);
+		
+		
+		RequestSpecification reqaddProduct= new RequestSpecBuilder().setBaseUri("https://rahulshettyacademy.com/")
+				.addHeader("Authorization", tok)
+				.build();
+		
+		
+		
+		
+	String gp =	given().log().all().spec(reqaddProduct)	
+			.param("productName", "NYKA")
+			.param("productAddedBy", UserId)
+			.param("productCategory", "fashion")
+			.param("productSubCategory", "shirts")
+			.param("productPrice", "222")
+			.param("productDescription", "NYKA")
+			.param("productFor", "Radha")		
+			.multiPart("file",new File("C://Users//rmelagir//Desktop//pic.png")).log().all()
+			.when().log().all().post("api/ecom/product/add-product").then().extract().asString();
+	
+	
+	JsonPath js2 = new JsonPath(gp);
+	js2.getString("productId");
+	//.header("Authorization", tok)
+	
+	System.out.println(js2.getString("productId"));
+	System.out.println(js2.getString("message"));
+	//System.out.println(gp.getproductId());
+	
+		
+	}
+
+}

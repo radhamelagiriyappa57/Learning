@@ -1,0 +1,17 @@
+package Day1;
+
+public class studentMain {
+	
+	
+	public static void main(String[] args) {
+	
+	student stu1 = new student();
+	stu1.sid=123;
+	stu1.sname="radg";
+	stu1.grad='A';
+	stu1.printdata();
+	
+	}
+	
+
+}

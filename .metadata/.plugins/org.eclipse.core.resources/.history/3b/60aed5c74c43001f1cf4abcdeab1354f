@@ -1,0 +1,12 @@
+package Day1;
+
+public class greetings {
+	
+	//no params, no return
+	
+	void m1()
+	{
+		System.out.println("hello");
+	}
+
+}

@@ -1,0 +1,68 @@
+package stepDefinitions;
+
+import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
+
+
+import commonfunctions.LoadProperties;
+import commonfunctions.utilities;
+import io.cucumber.java.After;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import pages.*;
+
+
+
+public class loginSteps {
+	
+	WebDriver driver;
+	loginpage loginpg;
+	static LoadProperties lp = new LoadProperties();
+	
+	
+	@Given("User is on login page")
+	public void user_is_on_login_page() {
+		
+		driver= utilities.login(null, lp.getProperty("qaurl"));
+		driver.findElement(By.linkText("Login")).click();
+		
+       
+	}
+	
+	@When("enter <username> and <pwd>")
+	public void enter_username_and_pwd() {
+		loginpg = new loginpage();
+		PageFactory.initElements(driver, loginpage.class);
+		loginpg.getUserNameButton().sendKeys("myl.qa9@mailinator.com");
+		loginpg.getPasswordButton().sendKeys("Test!@#123");
+	   
+	}
+
+
+	@And("click login button")
+	public void click_login_button() {
+		loginpg = new loginpage();
+		PageFactory.initElements(driver, loginpage.class);
+		loginpg.getloginButton().click();
+	    
+	}
+
+	@Then("user is on dashboard page")
+	public void user_is_on_dashboard_page() {
+		Assert.assertTrue(driver.getTitle().contentEquals("Home page | MyLiaison"));
+		
+	}
+
+@After
+public void after()
+{
+	//driver.quit();
+	driver.close();
+	
+	}
+
+}

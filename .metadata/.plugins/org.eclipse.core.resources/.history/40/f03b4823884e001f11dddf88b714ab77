@@ -1,0 +1,93 @@
+package stepDefinitions;
+
+import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+import commonfunctions.LoadProperties;
+import commonfunctions.utilities;
+import io.cucumber.java.After;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+public class loginSteps {
+	
+	WebDriver driver;
+	loginpage loginpg;
+	static LoadProperties lp = new LoadProperties();
+	@Given("User is on login page")
+	public void user_is_on_login_page() {
+		
+		driver= utilities.login(null, lp.getProperty("qaurl"));
+		driver.findElement(By.linkText("Login")).click();
+		
+       
+	}
+	
+	@When("enter myl.qa@mailinator.com and <pwd>")
+	public void enter_myl_qa_mailinator_com_and_pwd(String username, String password) {
+		
+		loginpg.getUserNameButton().sendKeys(username);
+		loginpg.getPasswordButton().sendKeys(password);
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@When("enter myl.qa2@mailinator.com and <pwd>")
+	public void enter_myl_qa2_mailinator_com_and_pwd(String username, String password) {
+		
+		loginpg.getUserNameButton().sendKeys(username);
+		loginpg.getPasswordButton().sendKeys(password);
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+
+	/*@When("enter <username> and <pwd>")
+	public void enter_un_and_pwd(String username, String password) {
+		
+		loginpg.getUserNameButton().sendKeys(username);
+		loginpg.getPasswordButton().sendKeys(password);
+		
+		
+	  //  driver.findElement(By.id("username")).sendKeys("myl3@mailinator.com");
+	  //  driver.findElement(By.id("password")).sendKeys("Test!@#123");
+	  //  driver.findElement(By.id("username")).click();
+	  //  driver.findElement(By.id("password")).click();
+	//    driver.findElement(By.id("kc-login")).click();
+	    
+	    
+	}
+	
+	*/
+
+
+
+	@And("click login button")
+	public void click_login_button() {
+		
+		loginpg.getloginButton().click();
+	    // Write code here that turns the phrase above into concrete actions
+	   // throw new io.cucumber.java.PendingException();
+	}
+
+	@Then("user is on dashboard page")
+	public void user_is_on_dashboard_page() {
+		Assert.assertTrue(driver.getTitle().contentEquals("Home page | MyLiaison"));
+		
+		// Write code here that turns the phrase above into concrete actions
+	   // throw new io.cucumber.java.PendingException();
+	}
+
+
+@After
+public void after()
+{
+	//driver.quit();
+	driver.close();
+	
+	}
+
+}

@@ -1,0 +1,19 @@
+package pojo;
+
+import java.util.List;
+
+public class Order {
+	
+	
+	private List<OrderDetails> orders;
+
+	public List<OrderDetails> getOrder() {
+		return orders;
+	}
+
+	public void setOrder(List<OrderDetails> order) {
+		orders = orders;
+	}
+	
+
+}

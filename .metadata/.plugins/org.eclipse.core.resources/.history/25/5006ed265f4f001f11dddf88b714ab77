@@ -1,0 +1,176 @@
+package stepDefinitions;
+
+import java.util.List;
+
+import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+
+import commonfunctions.LoadProperties;
+import commonfunctions.utilities;
+import io.cucumber.java.After;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import pages.loginpage;
+
+public class createaccount {
+	loginpage loginpg;
+	static LoadProperties lp = new LoadProperties();
+	WebDriverWait wait;
+	WebDriver driver;
+	
+	
+	@Given("User is in MYL")
+	public void user_is_on_MYL() {
+		
+		driver= utilities.login(null, lp.getProperty("qaurl"));
+		driver.findElement(By.linkText("Login")).click();
+		
+       
+	}
+	
+	@When("User fills data")
+	public void user_fills_data() throws InterruptedException {
+		
+			
+		 	
+		    driver.findElement(By.id("signUpUrl")).click();
+		    driver.findElement(By.id("email")).click();
+		    driver.findElement(By.id("email")).clear();
+		    driver.findElement(By.id("email")).sendKeys("myl.qa"+utilities.GenerateRandomNumber(3)+"@mailinator.com");
+		   
+		    driver.findElement(By.id("password")).click();
+		    driver.findElement(By.id("password")).clear();
+		    driver.findElement(By.id("password")).sendKeys("Test!@#123");
+		    
+		    driver.findElement(By.id("password-confirm")).click();
+		    driver.findElement(By.id("password-confirm")).clear();
+		    driver.findElement(By.id("password-confirm")).sendKeys("Test!@#123");
+		    driver.findElement(By.cssSelector(".kc-login-button")).click();
+		    
+	}
+
+	@And("click create button")
+	public void click_create_button() throws InterruptedException {
+	    
+			driver.findElement(By.id("terms")).click();
+		    driver.findElement(By.name("gdpr")).click();
+		    driver.findElement(By.id("termsofuse")).click();
+		    driver.findElement(By.id("kc-accept")).click();
+		    Thread.sleep(5000);
+	}
+
+	@Then("user is on Finish My Account Page")
+	public void user_is_on_FinishMyAccount_page() {
+		
+		Assert.assertTrue(driver.findElements(By.linkText("Finish My Account")).size()>0);
+	}
+	
+	@And("Fill data in Finish My Account Page")
+	public void filldata() throws InterruptedException {
+		
+			Thread.sleep(5000);
+		
+		
+		    driver.findElement(By.id("id_first_name")).click();
+		    driver.findElement(By.id("id_first_name")).sendKeys("radha");
+		    driver.findElement(By.id("id_middle_name")).sendKeys("m");
+		    driver.findElement(By.id("id_last_name")).sendKeys("m");
+		    driver.findElement(By.cssSelector(".rounded-l-lg svg")).click();
+		    driver.findElement(By.cssSelector("#id_country_phone_code > div:nth-child(1) > label")).click();
+		    driver.findElement(By.id("id_phone_number")).click();
+		    driver.findElement(By.id("id_phone_number")).sendKeys("+12123456789");
+		    driver.findElement(By.id("id_month_of_birth")).click();
+		    driver.findElement(By.cssSelector("#id_month_of_birth > div:nth-child(1) > label")).click();
+		    driver.findElement(By.id("id_day_of_birth")).click();
+		    driver.findElement(By.id("id_day_of_birth")).sendKeys("2");
+		    driver.findElement(By.id("id_year_of_birth")).click();
+		    driver.findElement(By.id("id_year_of_birth")).sendKeys("2000");
+		    driver.findElement(By.cssSelector(".rounded-lg > .justify-between:nth-child(1)")).click();
+		    driver.findElement(By.cssSelector("#id_educational_level > div:nth-child(2) > label")).click();
+		    driver.findElement(By.cssSelector(".validation-group:nth-child(6) > .bg-white .bg-white:nth-child(1)")).click();
+		    driver.findElement(By.cssSelector("#id_interested_in > div:nth-child(1) > label")).click();
+		    driver.findElement(By.cssSelector(".validation-group:nth-child(6) > .bg-white")).click();
+		    driver.findElement(By.cssSelector(".validation-group:nth-child(7) > .bg-white .bg-white:nth-child(1)")).click();
+		    driver.findElement(By.cssSelector("#id_field_of_study > div:nth-child(1) > label")).click();
+		    driver.findElement(By.cssSelector(".validation-group:nth-child(7) > .bg-white")).click();
+		    driver.findElement(By.cssSelector(".validation-group:nth-child(8) > .bg-white .bg-white:nth-child(1)")).click();
+		    driver.findElement(By.cssSelector("#id_areas_of_study > div:nth-child(1) > label")).click();
+		    driver.findElement(By.cssSelector(".validation-group:nth-child(8) > .bg-white")).click();
+		    driver.findElement(By.cssSelector("#id_visible_to_educational_institutions > div:nth-child(1) > label")).click();
+		    driver.findElement(By.id("submit-create-account")).click();
+		    {
+		      List<WebElement> elements = driver.findElements(By.cssSelector("#create-user-form > div:nth-child(3) > svg"));
+		      assert(elements.size() > 0);
+		    }
+	    
+	}
+	
+	@Then("Save About Me")
+	public void SaveAboutMe() {
+		driver.navigate().to("qaurl");
+		
+		driver.findElement(By.cssSelector("#more-dropdown-toggle svg")).click();
+	    driver.findElement(By.linkText("About Me")).click();
+	    driver.findElement(By.linkText("Edit")).click();
+	    driver.findElement(By.cssSelector(".z-20 > .border")).click();
+	    driver.findElement(By.cssSelector("#id_country_of_residency > div:nth-child(1) > label")).click();
+	    driver.findElement(By.cssSelector(".z-10 .flex > span:nth-child(1)")).click();
+	    driver.findElement(By.cssSelector("#id_country_of_citizenship > div:nth-child(1) > label")).click();
+	    driver.findElement(By.id("id_is_international_student_0")).click();
+	    driver.findElement(By.cssSelector(".rounded-md")).click();
+	    driver.findElement(By.id("id_hight_school_gpa")).click();
+	    driver.findElement(By.id("id_hight_school_gpa")).sendKeys("2");
+	    driver.findElement(By.id("id_college_school_gpa")).click();
+	    driver.findElement(By.id("id_college_school_gpa")).sendKeys("2");
+	    driver.findElement(By.id("id_degree_seeking_0")).click();
+	    driver.findElement(By.id("id_target_start_date_0")).click();
+	    {
+	      WebElement dropdown = driver.findElement(By.id("id_target_start_date_0"));
+	      dropdown.findElement(By.xpath("//option[. = 'January']")).click();
+	    }
+	    driver.findElement(By.id("id_target_start_date_1")).click();
+	    driver.findElement(By.id("id_target_start_date_1")).sendKeys("2000");
+	    driver.findElement(By.cssSelector(".rounded-md")).click();
+	    driver.findElement(By.id("id_modality_of_education_2")).click();
+	    driver.findElement(By.id("id_program_type_0")).click();
+	    driver.findElement(By.id("clickable")).click();
+	    driver.findElement(By.cssSelector("#id_state_of_interest > div:nth-child(3) > label")).click();
+	    driver.findElement(By.id("create-user-form")).click();
+	    driver.findElement(By.cssSelector(".rounded-md")).click();
+	    driver.findElement(By.cssSelector(".z-20 .flex")).click();
+	    driver.findElement(By.cssSelector("#id_country > div:nth-child(1) > label")).click();
+	    driver.findElement(By.cssSelector(".z-10 .flex > span:nth-child(1)")).click();
+	    driver.findElement(By.cssSelector("#id_state > div:nth-child(3) > label")).click();
+	    driver.findElement(By.cssSelector(".validation-group:nth-child(4) > .bg-white")).click();
+	    driver.findElement(By.id("id_city")).click();
+	    driver.findElement(By.id("id_city")).sendKeys("ity");
+	    driver.findElement(By.id("id_zip_code")).click();
+	    driver.findElement(By.id("id_zip_code")).sendKeys("12345");
+	    driver.findElement(By.id("id_address")).click();
+	    driver.findElement(By.id("id_address")).sendKeys("add");
+	    driver.findElement(By.cssSelector(".rounded-md")).click();
+	    driver.findElement(By.linkText("Explore Graduate Schools")).click();
+		
+	}
+	
+	
+	
+	
+	
+	
+	@After
+	public void after()
+	{
+		
+		driver.close();
+		
+		}
+}

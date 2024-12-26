@@ -1,0 +1,65 @@
+package stepDefinitions;
+
+import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import commonfunctions.LoadProperties;
+import commonfunctions.utilities;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import pages.loginpage;
+
+public class createaccount {
+	loginpage loginpg;
+	static LoadProperties lp = new LoadProperties();
+	WebDriverWait wait;
+	WebDriver driver;
+	@When("User fills data")
+	public void user_fills_data() throws InterruptedException {
+		
+			driver= utilities.login(null, lp.getProperty("qaurl"));
+		 	driver.findElement(By.linkText("Login")).click();
+		    driver.findElement(By.id("signUpUrl")).click();
+		    driver.findElement(By.id("email")).click();
+		    driver.findElement(By.id("email")).clear();
+		    driver.findElement(By.id("email")).sendKeys("myl.qa"+utilities.GenerateRandomNumber(2)+"@mailinator.com");
+		    Thread.sleep(5000);
+		    driver.findElement(By.id("password")).click();
+		    driver.findElement(By.id("password")).clear();
+		    driver.findElement(By.id("password")).sendKeys("Test!@#123");
+		    Thread.sleep(5000);
+		    driver.findElement(By.id("password-confirm")).click();
+		    driver.findElement(By.id("password-confirm")).clear();
+		    driver.findElement(By.id("password-confirm")).sendKeys("Test!@#123");
+		    
+		  
+		    
+		    //WebDriverWait wait = new WebDriverWait(driver, 10);
+		  //  wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".kc-login-button"))).click();
+		    driver.findElement(By.cssSelector(".kc-login-button")).click();
+		    Thread.sleep(5000);
+	}
+
+	@And("click create button")
+	public void click_create_button() throws InterruptedException {
+	    // Write code here that turns the phrase above into concrete actions
+			driver.findElement(By.id("terms")).click();
+		    driver.findElement(By.name("gdpr")).click();
+		    driver.findElement(By.id("termsofuse")).click();
+		    driver.findElement(By.id("kc-accept")).click();
+		    Thread.sleep(5000);
+	}
+
+	@Then("user is on Finish My Account Page")
+	public void user_is_on_FinishMyAccount_page() {
+		//Assert.assertTrue(driver.getTitle().contentEquals("Home page | MyLiaison"));
+		Assert.assertTrue(driver.findElements(By.linkText("Finish My Account")).size()>0);
+	}
+	
+	
+}

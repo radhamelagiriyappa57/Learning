@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="runnerCreateAccount" project="Myliaison" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="stepDefinitions.runnerCreateAccount" time="23.306">
+    <testsuite name="Test CreateAccount" time="23.306">
+      <testcase name="Create Account" classname="Test CreateAccount" time="23.306"/>
+    </testsuite>
+  </testsuite>
+</testrun>

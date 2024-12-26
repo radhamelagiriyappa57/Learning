@@ -1,0 +1,16 @@
+Feature: Test CreateAccount
+
+
+@smoketests
+Background: User is logged in
+    Given User is on login page
+    When enter <username> and <pwd>
+    And click login button
+    Then user is on dashboard page
+
+Scenario: Create Account
+
+    Given User is on login page
+    When User fills data
+    And click create button
+    Then user is on dashboard page

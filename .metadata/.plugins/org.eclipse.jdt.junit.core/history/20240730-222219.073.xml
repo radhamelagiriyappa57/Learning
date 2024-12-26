@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="runnerlogin" project="Myliaison" tests="1" started="1" failures="0" errors="1" ignored="0">
+  <testsuite name="stepDefinitions.runnerlogin" time="9.871">
+    <testsuite name="Test Login" time="9.871">
+      <testcase name="Check login is successful with valid credentials" classname="Test Login" time="9.871">
+        <error>java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebElement.sendKeys(java.lang.CharSequence[])" because the return value of "pages.loginpage.getUserNameButton()" is null&#13;
+	at stepDefinitions.loginSteps.enter_username_and_pwd(loginSteps.java:35)&#13;
+	at ✽.enter &lt;username&gt; and &lt;pwd&gt;(file:///C:/Users/rmelagir/eclipse-workspace/Myliaison/src/main/resources/Features/login.feature:6)&#13;
+&#13;
+</error>
+      </testcase>
+    </testsuite>
+  </testsuite>
+</testrun>

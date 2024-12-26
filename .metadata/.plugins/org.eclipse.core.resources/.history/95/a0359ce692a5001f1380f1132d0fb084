@@ -1,0 +1,20 @@
+package pojo;
+
+public class UserDetail {
+
+	
+	private String userEmail;
+	public String getUn() {
+		return userEmail;
+	}
+	public void setUn(String un) {
+		this.userEmail = un;
+	}
+	public String getPwd() {
+		return userPassword;
+	}
+	public void setPwd(String pwd) {
+		this.userPassword = pwd;
+	}
+	private String userPassword;
+}

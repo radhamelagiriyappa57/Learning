@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="runnerlogin" project="Myliaison" tests="2" started="2" failures="0" errors="0" ignored="0">
+  <testsuite name="stepDefinitions.runnerlogin" time="51.914">
+    <testsuite name="Test Login" time="51.914">
+      <testcase name="Check login is successful with valid credentials" classname="Test Login" time="22.608"/>
+      <testcase name="Save Biographic" classname="Test Login" time="29.305"/>
+    </testsuite>
+  </testsuite>
+</testrun>

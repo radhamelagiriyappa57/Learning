@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="runnerlogin" project="Myliaison" tests="2" started="2" failures="0" errors="2" ignored="0">
+  <testsuite name="stepDefinitions.runnerlogin" time="0.1">
+    <testsuite name="Test Login" time="0.1">
+      <testcase name="#1" classname="Test Login" time="0.092">
+        <error>io.cucumber.junit.UndefinedStepException: The step 'User is on login page' and 3 other step(s) are undefined.
+You can implement these steps using the snippet(s) below:
+
+@Given("User is on login page")
+public void user_is_on_login_page() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When("enter myl.qa@mailinator.com and &lt;pwd&gt;")
+public void enter_myl_qa_mailinator_com_and_pwd() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When("click login button")
+public void click_login_button() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("user is on dashboard page")
+public void user_is_on_dashboard_page() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+&#13;
+&#13;
+</error>
+      </testcase>
+      <testcase name="#2" classname="Test Login" time="0.007">
+        <error>io.cucumber.junit.UndefinedStepException: The step 'User is on login page' and 3 other step(s) are undefined.
+You can implement these steps using the snippet(s) below:
+
+@Given("User is on login page")
+public void user_is_on_login_page() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When("enter myl.qa2@mailinator.com and &lt;pwd&gt;")
+public void enter_myl_qa2_mailinator_com_and_pwd() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When("click login button")
+public void click_login_button() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("user is on dashboard page")
+public void user_is_on_dashboard_page() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+&#13;
+&#13;
+</error>
+      </testcase>
+    </testsuite>
+  </testsuite>
+</testrun>

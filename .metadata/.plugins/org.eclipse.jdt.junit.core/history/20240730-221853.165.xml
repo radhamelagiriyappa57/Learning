@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="runnerlogin" project="Myliaison" tests="2" started="2" failures="0" errors="2" ignored="0">
+  <testsuite name="stepDefinitions.runnerlogin" time="18.526">
+    <testsuite name="Test Login" time="18.526">
+      <testcase name="Check login is successful with valid credentials #1" classname="Test Login" time="10.317">
+        <error>io.cucumber.junit.UndefinedStepException: The step 'enter myl.qa@mailinator.com and &lt;pwd&gt;' is undefined.
+You can implement this step using the snippet(s) below:
+
+@When("enter myl.qa@mailinator.com and &lt;pwd&gt;")
+public void enter_myl_qa_mailinator_com_and_pwd() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+&#13;
+&#13;
+</error>
+      </testcase>
+      <testcase name="Check login is successful with valid credentials #2" classname="Test Login" time="8.208">
+        <error>io.cucumber.java.PendingException: TODO: implement me&#13;
+	at stepDefinitions.loginSteps.enter_myl_qa2_mailinator_com_and_pwd(loginSteps.java:90)&#13;
+	at ✽.enter myl.qa2@mailinator.com and &lt;pwd&gt;(file:///C:/Users/rmelagir/eclipse-workspace/Myliaison/src/main/resources/Features/login.feature:6)&#13;
+&#13;
+</error>
+      </testcase>
+    </testsuite>
+  </testsuite>
+</testrun>

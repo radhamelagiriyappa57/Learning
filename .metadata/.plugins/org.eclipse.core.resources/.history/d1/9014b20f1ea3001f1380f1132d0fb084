@@ -1,0 +1,21 @@
+package response;
+
+public class mobile {
+	private String coursetitle;
+	public String getcoursetitle() {
+		return coursetitle;
+	}
+	public void setcoursetitle(String coursetitle) {
+		this.coursetitle = coursetitle;
+	}
+	public String getprice() {
+		return price;
+	}
+	public void setprice(String price) {
+		this.price = price;
+	}
+	private String price;
+	
+	
+
+}

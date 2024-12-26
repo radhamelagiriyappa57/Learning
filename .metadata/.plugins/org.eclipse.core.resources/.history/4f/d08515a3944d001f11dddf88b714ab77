@@ -1,0 +1,16 @@
+screenShotPath=d:\\screenshot\\
+
+
+url=https://qa-test.myliaison.com/
+csif_url=https://csifweb.stg.amsapps.com/user_session/new
+qaURL=https://cpi2.stg.amsapps.com/qa
+admin_un=admin1@ams.com
+admin_pwd=@dMin1
+user_pwd=P@ssw0rd
+chromepath=C:\\Users\\rmelagir\\eclipse-workspace\\Myliaison\\chromedriver.exe
+
+IEPath=D:\\softwares\\IEDriverServer_x64_3.14.0\\IEDriverServer.exe
+edgepath=C:\\Project\\softwares\\msedgedriver.exe
+driver=webdriver.chrome.driver
+binary=C:\\Program Files (x86)\\Microsoft\\Edge Beta\\Application\\msedge.exe
+testaccount=bwhite@demo.edue

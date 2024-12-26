@@ -1,0 +1,13 @@
+Feature: Test CreateAccount
+
+
+
+Background: User is logged in
+    Given User is on login page
+    
+@smoketests
+Scenario: Create Account
+
+  	When User fills data
+    And click create button
+    Then user is on dashboard page

@@ -1,0 +1,21 @@
+Feature: Test Login
+
+
+Background: User is logged in
+	Given User is in MYL
+
+ Scenario: Check login is successful with valid credentials
+
+    Given User is on login page
+    When enter <username> and <pwd>
+    And click login button
+    Then user is on dashboard page
+ @regress   
+    Scenario: Save About me
+    
+    When User navigates to My Profile
+    And click About me
+    Then Save About me
+     
+
+    

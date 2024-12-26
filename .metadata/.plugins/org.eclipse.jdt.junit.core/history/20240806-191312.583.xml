@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="runnerlogin" project="Myliaison" tests="2" started="2" failures="0" errors="1" ignored="0">
+  <testsuite name="stepDefinitions.runnerlogin" time="44.149">
+    <testsuite name="Test Login" time="44.149">
+      <testcase name="Check login is successful with valid credentials" classname="Test Login" time="20.977"/>
+      <testcase name="Save Biographic" classname="Test Login" time="23.172">
+        <error>io.cucumber.java.PendingException: TODO: implement me&#13;
+	at stepDefinitions.loginSteps.click_about_me(loginSteps.java:107)&#13;
+	at ✽.click profile(file:///C:/Users/rmelagir/eclipse-workspace/Myliaison/src/main/resources/Features/login.feature:21)&#13;
+&#13;
+</error>
+      </testcase>
+    </testsuite>
+  </testsuite>
+</testrun>

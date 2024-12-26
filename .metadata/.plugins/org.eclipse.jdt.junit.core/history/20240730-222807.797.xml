@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="runnerlogin" project="Myliaison" tests="1" started="1" failures="1" errors="0" ignored="0">
+  <testsuite name="stepDefinitions.runnerlogin" time="11.154">
+    <testsuite name="Test Login" time="11.154">
+      <testcase name="Check login is successful with valid credentials" classname="Test Login" time="11.154">
+        <failure>java.lang.AssertionError&#13;
+	at org.junit.Assert.fail(Assert.java:87)&#13;
+	at org.junit.Assert.assertTrue(Assert.java:42)&#13;
+	at org.junit.Assert.assertTrue(Assert.java:53)&#13;
+	at stepDefinitions.loginSteps.user_is_on_dashboard_page(loginSteps.java:54)&#13;
+	at ✽.user is on dashboard page(file:///C:/Users/rmelagir/eclipse-workspace/Myliaison/src/main/resources/Features/login.feature:8)&#13;
+&#13;
+</failure>
+      </testcase>
+    </testsuite>
+  </testsuite>
+</testrun>

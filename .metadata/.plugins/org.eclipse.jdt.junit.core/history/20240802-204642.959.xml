@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="runnerlogin" project="Myliaison" tests="1" started="1" failures="0" errors="1" ignored="0">
+  <testsuite name="stepDefinitions.runnerlogin" time="47.541">
+    <testsuite name="Test Login" time="47.541">
+      <testcase name="Save Biographic" classname="Test Login" time="47.541">
+        <error>io.cucumber.java.PendingException: TODO: implement me&#13;
+	at stepDefinitions.loginSteps.user_navigates_to_my_profile(loginSteps.java:62)&#13;
+	at ✽.User navigates to My Profile(file:///C:/Users/rmelagir/eclipse-workspace/Myliaison/src/main/resources/Features/login.feature:25)&#13;
+&#13;
+</error>
+      </testcase>
+    </testsuite>
+  </testsuite>
+</testrun>

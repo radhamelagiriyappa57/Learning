@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="runnerlogin" project="Myliaison" tests="2" started="2" failures="0" errors="3" ignored="0">
+  <testsuite name="stepDefinitions.runnerlogin" time="50.487">
+    <testsuite name="Test Login" time="50.487">
+      <testcase name="Check login is successful with valid credentials" classname="Test Login" time="15.548">
+        <error>java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.close()" because "this.driver" is null&#13;
+	at stepDefinitions.createaccount.after(createaccount.java:170)&#13;
+&#13;
+</error>
+      </testcase>
+      <testcase name="Save Biographic" classname="Test Login" time="34.938">
+        <error>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;a href="/edit-profile/step-2/" class="text-base lg:text-base lg:text-xl leading-6 underline flex justify-center items-center gap-2"&gt;...&lt;/a&gt; is not clickable at point (1787, 194). Other element would receive the click: &lt;a href="/about-me/" class="block cursor-pointer py-2 hover:text-[#192449]"&gt;...&lt;/a&gt;
+  (Session info: chrome=127.0.6533.74)
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [80e1a806a8ed469f8d677b64db74c93c, clickElement {id=f.D37521F47E76B0EAD1C417691F38E023.d.F46D2B97053CB10F666148D59FBD9C6E.e.108}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 127.0.6533.74, chrome: {chromedriverVersion: 127.0.6533.72 (9755e24ca85a..., userDataDir: C:\Users\rmelagir\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50291}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50291/devtoo..., se:cdpVersion: 127.0.6533.74, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (80e1a806a8ed469f8d677b64db74c93c)] -&gt; link text: Edit]
+Session ID: 80e1a806a8ed469f8d677b64db74c93c&#13;
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)&#13;
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)&#13;
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)&#13;
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)&#13;
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)&#13;
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)&#13;
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)&#13;
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)&#13;
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)&#13;
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)&#13;
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:224)&#13;
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)&#13;
+	at stepDefinitions.loginSteps.user_navigates_to_my_profile(loginSteps.java:93)&#13;
+	at ✽.User navigates to My Profile(file:///C:/Users/rmelagir/eclipse-workspace/Myliaison/src/main/resources/Features/login.feature:20)&#13;
+&#13;
+java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.close()" because "this.driver" is null&#13;
+	at stepDefinitions.createaccount.after(createaccount.java:170)&#13;
+&#13;
+</error>
+      </testcase>
+    </testsuite>
+  </testsuite>
+</testrun>

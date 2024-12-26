@@ -1,0 +1,13 @@
+
+Feature: Application Login
+  I want to use this template for my feature file
+
+  @Test
+  Scenario: Admin Page login
+    Given User is on landing page
+    When User login to applciation
+    Then Home page displayed
+    And cards are displayed
+
+  
+ 

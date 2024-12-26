@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="runnerlogin" project="Myliaison" tests="2" started="2" failures="0" errors="1" ignored="0">
+  <testsuite name="stepDefinitions.runnerlogin" time="34.558">
+    <testsuite name="Test CreateAccount" time="21.569">
+      <testcase name="Create Account" classname="Test CreateAccount" time="21.569">
+        <error>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;button type="submit" onclick="overrideServerError();" class="kc-login-button kcRegisterButton kcloginbutton btn btn-login-button btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" disabled=""&gt;...&lt;/button&gt; is not clickable at point (1597, 658). Other element would receive the click: &lt;div id="kc-form-buttons" class="col-xs-12 col-sm-12 col-md-12 col-lg-12"&gt;...&lt;/div&gt;
+  (Session info: chrome=127.0.6533.72)
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [4f38673c67a02811c097bdf5984d3333, clickElement {id=f.FEF21C7A8DDFC628BDB8B4901D1812EC.d.D85F4876A04C4C6B1F5EDB48E525639D.e.87}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 127.0.6533.72, chrome: {chromedriverVersion: 127.0.6533.72 (9755e24ca85a..., userDataDir: C:\Users\rmelagir\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60530}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60530/devtoo..., se:cdpVersion: 127.0.6533.72, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (4f38673c67a02811c097bdf5984d3333)] -&gt; css selector: .kc-login-button]
+Session ID: 4f38673c67a02811c097bdf5984d3333&#13;
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)&#13;
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)&#13;
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)&#13;
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)&#13;
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)&#13;
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)&#13;
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)&#13;
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)&#13;
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)&#13;
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)&#13;
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:224)&#13;
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)&#13;
+	at stepDefinitions.createaccount.user_fills_data(createaccount.java:30)&#13;
+	at ✽.User fills data(file:///C:/Users/rmelagir/eclipse-workspace/Myliaison/src/main/resources/Features/CreateAccount.feature:11)&#13;
+&#13;
+</error>
+      </testcase>
+    </testsuite>
+    <testsuite name="Test Login" time="12.988">
+      <testcase name="Check login is successful with valid credentials" classname="Test Login" time="12.988"/>
+    </testsuite>
+  </testsuite>
+</testrun>
