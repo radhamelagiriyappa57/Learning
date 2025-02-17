@@ -1,5 +1,6 @@
 package utils;
 
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -16,15 +17,10 @@ public class genericUtils {
 	public void switchwindow()
 	{
 		
-		Set <String> s1 = driver.getWindowHandles();
-		 Iterator<String> i = s1.iterator();	
-		 
-		 
 		
-		 
-		 
-		 
-		 
+		
+		Set <String> s1 = driver.getWindowHandles();
+		 Iterator<String> i = s1.iterator();	 
 		 
 		 
 		 String Parentwindow =  i.next();		 

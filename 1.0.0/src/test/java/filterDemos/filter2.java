@@ -18,7 +18,7 @@ public class filter2 {
 		longnames = names.stream().filter(str->(str.length()>5 && str.length()<8)).collect(Collectors.toList());
 		
 	//	List<String> longnames2 = names.stream().filter(str->(str.length()>5 && str.length()<8)).forEach(str->System.out.println(str));
-		
+		//names.stream().forEach(str->System.out.println(ch()));
 		System.out.println(longnames);
 		
 	}

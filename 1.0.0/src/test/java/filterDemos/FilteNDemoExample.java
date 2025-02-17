@@ -1,6 +1,7 @@
 package filterDemos;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -30,9 +31,14 @@ public class FilteNDemoExample {
 		emp.add(new Employee(236,"kuhu", 9234));
 				
 		emp.add(new Employee(223,"kushi", 2734));
+		
+		
 	List<Integer> result = emp.stream().filter(e->e.salary>20).map(e->e.salary).collect(Collectors.toList());
 	
 	System.out.print(result);
+	
+
+	emp.stream().sorted().forEach(System.out::println);
 	
 	}
 

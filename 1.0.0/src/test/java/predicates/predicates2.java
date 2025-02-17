@@ -35,11 +35,11 @@ public class predicates2 {
 		//EX2
 		
 		ArrayList<Employee> a1= new ArrayList();
-		a1.add(new Employee("hari", 2, 2)) ;
-		a1.add(new Employee("shiv", 3, 2)) ;
-		a1.add(new Employee("krish", 3, 2)) ;
-		a1.add(new Employee("allen", 5, 2)) ;
-		a1.add(new Employee("kannan", 7, 2)) ;
+		a1.add(new Employee("hari", 20, 20)) ;
+		a1.add(new Employee("shiv", 30, 20)) ;
+		a1.add(new Employee("krish", 30, 20)) ;
+		a1.add(new Employee("allen", 50, 20)) ;
+		a1.add(new Employee("kannan", 70, 20)) ;
 		
 		for(Employee ey:a1)
 		{
@@ -48,7 +48,8 @@ public class predicates2 {
 			pr2.test(ey);
 			System.out.println(ey.Ename+" "+ey.ESalary);
 		}
-		
+	
+		a1.stream().filter(pr = ey1 -> (ey1.ESalary > 50 && ey1.EExperience>10)).forEach(ey->System.out.println(ey.Ename+" "+ey.ESalary));
 
 	}
 

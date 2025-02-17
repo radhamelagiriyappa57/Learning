@@ -35,8 +35,7 @@ public class offersPageDefinition {
 			offersPage fp = new offersPage(testContxtSetup.driver);
 			fp.SearchItem(shortname);
 			//fp.driver.findElement(By.xpath("//*[@id=\"search-field\"]")).sendKeys(shortname);
-			Thread.sleep(2000);	
-			
+			Thread.sleep(2000);				
 			String offerPageProductName= fp.getProductname();
 		 	System.out.println(offerPageProductName);
 		
